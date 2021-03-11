@@ -36,7 +36,6 @@ public class Wellen2 extends PApplet
         s=50;
         grün=color(0,255,0); 
         weiß=color(255,255,255);
-        farbe=grün; 
         alleQuadrate();
 
     }
@@ -46,7 +45,7 @@ public class Wellen2 extends PApplet
      *
      * @param x - x-Koordinate
      * @param y - y-Koordinate
-     * @param farbe - farbe des Quadrates
+     * s - seitenlänge 
      */
     public void zeichneQuadrat(int x, int y, int s)
     {
@@ -54,16 +53,21 @@ public class Wellen2 extends PApplet
     }
 
     public void alleQuadrate(){
+        farbe=grün;
         for (int j = 0; j <= 10; j++) {
             for (int i = 0; i <= 10; i ++) {
-                zeichneQuadrat(i*s+25,j*s+25,s);
                 fill (farbe);
+                stroke(farbe);
+                strokeWeight(1);
+                zeichneQuadrat(i*s+25,j*s+25,s);
                 if (farbe==grün){
                     farbe=weiß;}
                 else{
                     farbe=grün;}
-                zeichneQuadrat(i*s+25+8/2,j*s+25+8/2,s-8);
-                fill(farbe);
+                fill (farbe);
+                stroke(farbe);
+                strokeWeight(1);
+                zeichneQuadrat(i*s+25+9/2,j*s+25+8/2,s-9);
             }
         }
     }
